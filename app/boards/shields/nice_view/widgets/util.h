@@ -38,7 +38,7 @@ struct battery_status_state {
 #endif
 };
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]);
+void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int16_t angle, lv_coord_t x_offset, lv_coord_t y_offset);
 void draw_battery(lv_obj_t *canvas, const struct status_state *state);
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color, const lv_font_t *font,
                     lv_text_align_t align);

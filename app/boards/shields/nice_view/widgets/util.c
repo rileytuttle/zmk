@@ -10,7 +10,7 @@
 
 LV_IMG_DECLARE(bolt);
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
+void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int16_t angle, lv_coord_t x_offset, lv_coord_t y_offset) {
     static lv_color_t cbuf_tmp[CANVAS_SIZE * CANVAS_SIZE];
     memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
     lv_img_dsc_t img;
@@ -20,7 +20,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
     img.header.h = CANVAS_SIZE;
 
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    lv_canvas_transform(canvas, &img, 900, LV_IMG_ZOOM_NONE, -1, 0, CANVAS_SIZE / 2,
+    lv_canvas_transform(canvas, &img, angle, LV_IMG_ZOOM_NONE, x_offset, y_offset, CANVAS_SIZE / 2,
                         CANVAS_SIZE / 2, true);
 }
 
