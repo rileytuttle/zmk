@@ -164,7 +164,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     }
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf, 1800, -1, 0);
+    rotate_canvas(canvas, cbuf, 1800, -2, 0);
 }
 
 static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
